@@ -1,26 +1,16 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const webpack = require('webpack');
+const mode = process.env.NODE_ENV || "development";
 
 module.exports = {
-    mode: "development",
+    mode: mode,
     entry: {
         main: './src/index.js'
     },
     output: {
-        filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'build')
+        filename: '[name].js',
+        path: path.resolve("./dist")
     },
-    resolve: { extensions: ["*", ".js", ".jsx"] },
-    plugins: [
-        new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            title: 'webpack-react-start-kit',
-            template: './public/index.html'
-        }),
-        new webpack.HotModuleReplacementPlugin()
-    ],
     module: {
         rules: [
             {
@@ -32,16 +22,9 @@ module.exports = {
             }
         ]
     },
-    devtool: 'inline-source-map',
-    devServer: {
-        contentBase: './build',
-        noInfo: true,
-        open: true,
-        port: 9000,
-        after: function (app, server) {
-            app.listen(3000, function () {
-                console.log("Webpack dev server is listening on port 9000");
-            })
-        }
-    }
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'public/index.html'
+        })
+    ]
 };
