@@ -2,7 +2,7 @@ import * as types from '../actions'
 
 // 기본값
 const initialState = {
-  isTest: true
+  isTest: false
 }
 
 // 리듀서
