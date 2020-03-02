@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TodoItem from './TodoItem';
 
 class TodoList extends Component {
   constructor(props) {
@@ -27,26 +28,20 @@ class TodoList extends Component {
     return <div>
       {
         this.state.todoList.map((item, index) => {
-          return <div key={index} style={{ background: 'pink', margin: '5px' }}>
-            <span style={{ marginRight: '5px', cursor: 'pointer' }}
-              onClick={() => this.setState({
-                todoList: [
-                  ...this.state.todoList.slice(0, index),
-                  {
-                    ...item,
-                    isChecked: !item.isChecked
-                  },
-                  ...this.state.todoList.slice(index + 1, this.state.todoList.length)
-                ]
-              })}>
-              {
-                item.isChecked ? '♥ ' : '♡'
-              }
-            </span>
-            {
-              item.value
-            }
-          </div>
+          return <TodoItem
+            key={index}
+            value={item.value}
+            isChecked={item.isChecked}
+            onClick={() => this.setState({
+              todoList: [
+                ...this.state.todoList.slice(0, index),
+                {
+                  ...item,
+                  isChecked: !item.isChecked
+                },
+                ...this.state.todoList.slice(index + 1, this.state.todoList.length)
+              ]
+            })} />
         })
       }
     </div >
