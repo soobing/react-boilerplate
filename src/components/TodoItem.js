@@ -4,6 +4,15 @@ class TodoItem extends Component {
   constructor(props) {
     super(props);
   }
+  componentDidMount() {
+    console.log('자식 componentDidMount')
+  }
+  componentDidUpdate() {
+    console.log('자식 componentDidUpdate')
+  }
+  componentWillUnmount() {
+    console.log('자식 componentWillUnmount')
+  }
 
   render() {
     return <div style={{ background: 'pink', margin: '5px' }}>

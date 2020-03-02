@@ -24,6 +24,16 @@ class TodoList extends Component {
       ]
     }
   }
+
+  componentDidMount() {
+    console.log('부모 componentDidMount')
+  }
+  componentDidUpdate() {
+    console.log('부모 componentDidUpdate')
+  }
+  componentWillUnmount() {
+    console.log('부모 componentWillUnmount')
+  }
   render() {
     return <div>
       {
