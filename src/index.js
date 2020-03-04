@@ -1,4 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-ReactDOM.render(<div>Hello React</div>, document.getElementById('root'));
+import styled from 'styled-components'
+const StyledDiv = styled.div`
+  color: red;
+ `;
+ReactDOM.render(<StyledDiv>Hello React</StyledDiv>, document.getElementById('root'));
