@@ -10,6 +10,7 @@ export function* initApp(action) {
   //   yield put({ type: types.APP_INIT_REQUEST_FAILED, error })
   // }
   // console.log('saga initApp', action)
+
   fetch('https://api.github.com/orgs/nodejs')
     .then(function (response) {
       console.log('saga initApp 1', response);
