@@ -12,7 +12,7 @@ export function* initApp(action) {
   // console.log('saga initApp', action)
   fetch('https://api.github.com/orgs/nodejs')
     .then(function (response) {
-      console.log('saga initApp 1', response)
+      console.log('saga initApp 1', response);
     })
     .then(function (myJson) {
       console.log('saga initApp 2', JSON.stringify(myJson));
