@@ -9,7 +9,15 @@ export function* initApp(action) {
   // } catch (error) {
   //   yield put({ type: types.APP_INIT_REQUEST_FAILED, error })
   // }
-  console.log('saga initApp', action)
+  // console.log('saga initApp', action)
+  fetch('https://api.github.com/orgs/nodejs')
+    .then(function (response) {
+      console.log('saga initApp 1', response)
+      // return response.json();
+    })
+    .then(function (myJson) {
+      console.log('saga initApp 2', JSON.stringify(myJson));
+    });
 }
 
 export function* getUserInfo(action) {
