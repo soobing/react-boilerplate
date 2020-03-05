@@ -1,4 +1,5 @@
 {
+  "homepage": "https://soobing.react.io",
   "name": "react-boilerplate",
   "version": "1.0.0",
   "description": "make my own react boilerplate",
@@ -6,7 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "react",
@@ -15,6 +18,7 @@
   "author": "soobing",
   "license": "MIT",
   "dependencies": {
+    "gh-pages": "^2.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
