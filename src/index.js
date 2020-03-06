@@ -1,7 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styled from 'styled-components'
-const StyledDiv = styled.div`
-  color: red;
- `;
-ReactDOM.render(<StyledDiv>Hello React</StyledDiv>, document.getElementById('root'));
+
+import { Provider } from 'react-redux';
+import store from './store';
+
+import App from './App';
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
