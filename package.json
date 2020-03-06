@@ -1,4 +1,5 @@
 {
+  "homepage": "https://soobing.github.io/react-boilerplate/",
   "name": "react-boilerplate",
   "version": "1.0.0",
   "description": "make my own react boilerplate",
@@ -6,7 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "react",
@@ -20,7 +23,9 @@
     "react-dom": "^16.12.0",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
-    "redux-saga": "^1.1.3"
+    "redux-saga": "^1.1.3",
+    "gh-pages": "^2.2.0",
+    "styled-components": "^5.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
