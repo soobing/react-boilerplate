@@ -4,6 +4,10 @@ import * as types from '../actions'
 const initialState = {
   isTest: false,
   isInited: false,
+  musicList: undefined,
+  seriesType: undefined,
+  choType: undefined,
+  FolderType: undefined
 }
 
 // 리듀서
