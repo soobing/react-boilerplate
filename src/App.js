@@ -3,32 +3,25 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 import Series from './components/Series';
 import Cho from './components/Cho';
 import Music from './components/Music';
 import List from './components/List';
 import Login from './components/Login';
+
 export default function App() {
   return <Router>
     <Switch>
-      <Route path="/">
-        <Login />
-      </Route>
-      <Route path="/series">
-        <Series />
-      </Route>
-      <Route path="/series/cho">
-        <Cho />
-      </Route>
-      <Route path="/series/cho/music">
-        <Music />
-      </Route>
-      <Route path="/series/cho/music/list">
-        <List />
-      </Route>
+      <Route exact path="/" component={Login} />
+      <Route path="/series/cho/music/list" component={List} />
+      <Route path="/series/cho/music" component={Music} />
+      <Route path="/series/cho" component={Cho} />
+      <Route path="/series" component={Series} />
+      <Redirect path="*" to="/" />
     </Switch>
-  </Router>
+  </Router >
 }
 
