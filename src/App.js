@@ -6,11 +6,11 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
-import Series from './components/Series';
-import Cho from './components/Cho';
-import Music from './components/Music';
-import List from './components/List';
-import Login from './components/Login';
+import Series from './pages/Series';
+import Cho from './pages/Cho';
+import Music from './pages/Music';
+import List from './pages/List';
+import Login from './pages/Login';
 
 export default function App() {
   return <Router>
