@@ -1,6 +1,6 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
 import * as types from '../actions/index';
-
+import dummy from '../../dummy.js'
 export function* initApp(action) {
   // try {
   //   // const data = yield call(Api.fetchUser, action.payload.url)]
@@ -23,7 +23,12 @@ export function* initApp(action) {
 export function* getUserInfo(action) {
   console.log('saga getUserInfo')
 }
+
+export function* getMusicData(action) {
+  console.log(dummy)
+}
 export default function* appRootSaga() {
   yield takeEvery(types.APP_INIT_REQUEST, initApp) // takeEvery vs takeLatest
   yield takeEvery(types.APP_USERINFO_REQUEST, getUserInfo)
+  yield takeEvery(types.SERIES_MUSIC_DATA_REQUEST, getMusicData);
 }
