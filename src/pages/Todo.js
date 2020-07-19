@@ -97,7 +97,7 @@ export default function Todo({ }) {
       <h1 className="todo-list-title">Todo List</h1>
       {
         list.map((todo, index) => (
-          <TodoItem key={index} did={todo.did}>
+          <TodoItem className="todo-list-item" key={index} did={todo.did}>
             <p>{index + 1}. {todo.value}</p>
             <span onClick={() => deleteItem(index)}>❌</span>
             <span onClick={() => checkItem(index)}>✅</span>

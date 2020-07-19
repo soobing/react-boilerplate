@@ -27,7 +27,7 @@ export default function Nasa({ }) {
       });
   }, [])
 
-  return <Wrapper>
+  return <Wrapper id="nasa">
     <h1>오늘의 우주</h1>
     <iframe
       src={imgUrl}>
