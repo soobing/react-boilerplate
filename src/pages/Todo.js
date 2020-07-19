@@ -81,8 +81,8 @@ export default function Todo({ }) {
   }
 
   return <Wrapper>
-    <h1>Add Todo</h1>
-    <MakeTodoCard>
+    <h1 className="add-todo-title">Add Todo</h1>
+    <MakeTodoCard id="make-todo-card">
       <input ref={inputRef}
         autoFocus
         onKeyDown={(e) => {
@@ -93,8 +93,8 @@ export default function Todo({ }) {
         }} />
       <button onClick={addItem}>add</button>
     </MakeTodoCard>
-    <List>
-      <h1>Todo List</h1>
+    <List id="todo-list">
+      <h1 className="todo-list-title">Todo List</h1>
       {
         list.map((todo, index) => (
           <TodoItem key={index} did={todo.did}>
