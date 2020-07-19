@@ -1,6 +1,11 @@
+const webpack = require('webpack');
+
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const mode = process.env.NODE_ENV || "development";
+
+const dotenv = require('dotenv');
+dotenv.config();
 
 module.exports = {
     mode: mode,
@@ -41,6 +46,9 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: 'public/index.html'
-        })
+        }),
+        new webpack.DefinePlugin({
+            'process.env.NASA_API_KEY': JSON.stringify(process.env.NASA_API_KEY)
+        }),
     ]
 };

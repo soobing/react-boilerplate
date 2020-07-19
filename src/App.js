@@ -17,6 +17,7 @@ const Wrapper = styled.div`
   margin: auto;
 `
 export default function App() {
+  console.log(process.env.NASA_API_KEY)
   return <Router>
     <Wrapper>
       <Switch>
