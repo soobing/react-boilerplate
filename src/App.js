@@ -36,8 +36,7 @@ const Tab = styled.div`
   }
   border-bottom: 1px solid #ff6100;
   width: fit-content;
-  margin-left: auto;
-  margin-top: 10px;
+  margin: 10px 10px 20px auto;
 `
 export default function App() {
   return <Router>
