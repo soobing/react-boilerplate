@@ -3,6 +3,10 @@ context('화면 테스트', () => {
     cy.visit('http://localhost:8080/')
   })
 
+  it('.sc-AxgMl', () => {
+    cy.get('.sc-AxgMl').should('be.visible');
+  })
+
   it('Add Todo 영역이 잘 보이는지', () => {
     // Add Todo 텍스트와 input, 그리고 add 버튼이 보여야한다.
     cy.get('.add-todo-title').should('be.visible');
